@@ -41,6 +41,9 @@ class ChamadoRestController {
                 .body(novoChamadoSalvo);
     }
 
+    @GetMapping("/status/{status}")
+
+
 
 
 }

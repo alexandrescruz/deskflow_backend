@@ -1,5 +1,6 @@
 package com.example.deskflow.service;
 
+import com.example.deskflow.enums.StatusChamado;
 import com.example.deskflow.exception.ChamadoNaoEncontradoException;
 import com.example.deskflow.model.Chamado;
 import com.example.deskflow.repository.ChamadoRepository;
@@ -39,6 +40,10 @@ public class ChamadoService {
         chamado.setStatus(novosDados.getStatus());
         Chamado novoChamado = repository.save(chamado);
         return novoChamado;
+    }
+
+    public List<Chamado> buscarPorStatus(StatusChamado status) {
+        return  repository.findByStatus(status);
     }
 
 }
